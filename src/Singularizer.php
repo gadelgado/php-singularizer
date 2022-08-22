@@ -2,6 +2,8 @@
 
 namespace Gadelgado\Singularizer;
 
+use Exception;
+
 class Singularizer
 {
     const SINGULAR = [
@@ -65,5 +67,7 @@ class Singularizer
                 return preg_replace($rule, $replacement, $word);
             }
         }
+
+        throw new Exception('Singular not found');
     }
 }
